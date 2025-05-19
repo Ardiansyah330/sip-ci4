@@ -1,0 +1,125 @@
+INFO - 2023-12-29 00:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 00:00:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 00:00:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 00:06:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 00:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 12:35:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 12:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 12:40:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 12:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 12:40:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 12:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 12:41:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 12:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 12:54:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 12:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 12:56:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-29 12:56:39 --> mysqli_sql_exception: Unknown column 'tbl_anggota.tbl_kelas' in 'field list' in C:\wamp64\www\si-perpustakaan-ci4\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\si-perpustakaan-ci4\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(`t...', 0)
+#1 C:\wamp64\www\si-perpustakaan-ci4\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(`t...')
+#2 C:\wamp64\www\si-perpustakaan-ci4\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(`t...')
+#3 C:\wamp64\www\si-perpustakaan-ci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(`t...', Array, false)
+#4 C:\wamp64\www\si-perpustakaan-ci4\app\Models\ModelPeminjaman.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\si-perpustakaan-ci4\app\Controllers\Admin.php(37): App\Models\ModelPeminjaman->PengajuanMasuk()
+#6 C:\wamp64\www\si-perpustakaan-ci4\system\CodeIgniter.php(942): App\Controllers\Admin->PengajuanMasuk()
+#7 C:\wamp64\www\si-perpustakaan-ci4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\wamp64\www\si-perpustakaan-ci4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\si-perpustakaan-ci4\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-29 12:56:39 --> Unknown column 'tbl_anggota.tbl_kelas' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(`tbl_peminjaman`.`id_anggota`) AS `qty`, `tbl_anggota`.`id_anggota`, `tbl_anggota`.`nim`, `tbl_anggota`.`nama`, `tbl_anggota`.`tbl_kelas`
+FROM `tbl_peminjaman`
+LEFT JOIN `tbl_anggota` ON `tbl_anggota`.`id_anggota` = `tbl_peminjaman`.`id_anggota`
+LEFT JOIN `tbl_prodi` ON `tbl_prodi`.`id_prodi` = `tbl_anggota`.`id_prodi`
+WHERE `status_pinjam` = :status_pinjam:
+GROUP BY `tbl_peminjaman`.`id_anggota`', [...], false)
+ 2 APPPATH\Models\ModelPeminjaman.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(37): App\Models\ModelPeminjaman->PengajuanMasuk()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->PengajuanMasuk()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-29 12:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-29 12:56:53 --> mysqli_sql_exception: Unknown column 'tbl_anggota.tbl_prodi' in 'field list' in C:\wamp64\www\si-perpustakaan-ci4\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\si-perpustakaan-ci4\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(`t...', 0)
+#1 C:\wamp64\www\si-perpustakaan-ci4\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(`t...')
+#2 C:\wamp64\www\si-perpustakaan-ci4\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(`t...')
+#3 C:\wamp64\www\si-perpustakaan-ci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(`t...', Array, false)
+#4 C:\wamp64\www\si-perpustakaan-ci4\app\Models\ModelPeminjaman.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\si-perpustakaan-ci4\app\Controllers\Admin.php(37): App\Models\ModelPeminjaman->PengajuanMasuk()
+#6 C:\wamp64\www\si-perpustakaan-ci4\system\CodeIgniter.php(942): App\Controllers\Admin->PengajuanMasuk()
+#7 C:\wamp64\www\si-perpustakaan-ci4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\wamp64\www\si-perpustakaan-ci4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\si-perpustakaan-ci4\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-29 12:56:53 --> Unknown column 'tbl_anggota.tbl_prodi' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(`tbl_peminjaman`.`id_anggota`) AS `qty`, `tbl_anggota`.`id_anggota`, `tbl_anggota`.`nim`, `tbl_anggota`.`nama`, `tbl_anggota`.`tbl_prodi`
+FROM `tbl_peminjaman`
+LEFT JOIN `tbl_anggota` ON `tbl_anggota`.`id_anggota` = `tbl_peminjaman`.`id_anggota`
+LEFT JOIN `tbl_prodi` ON `tbl_prodi`.`id_prodi` = `tbl_anggota`.`id_prodi`
+WHERE `status_pinjam` = :status_pinjam:
+GROUP BY `tbl_peminjaman`.`id_anggota`', [...], false)
+ 2 APPPATH\Models\ModelPeminjaman.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(37): App\Models\ModelPeminjaman->PengajuanMasuk()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->PengajuanMasuk()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-29 12:57:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-29 12:57:20 --> mysqli_sql_exception: Unknown column 'tbl_prodi.prodi' in 'field list' in C:\wamp64\www\si-perpustakaan-ci4\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\si-perpustakaan-ci4\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT COUNT(`t...', 0)
+#1 C:\wamp64\www\si-perpustakaan-ci4\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(`t...')
+#2 C:\wamp64\www\si-perpustakaan-ci4\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(`t...')
+#3 C:\wamp64\www\si-perpustakaan-ci4\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(`t...', Array, false)
+#4 C:\wamp64\www\si-perpustakaan-ci4\app\Models\ModelPeminjaman.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\si-perpustakaan-ci4\app\Controllers\Admin.php(37): App\Models\ModelPeminjaman->PengajuanMasuk()
+#6 C:\wamp64\www\si-perpustakaan-ci4\system\CodeIgniter.php(942): App\Controllers\Admin->PengajuanMasuk()
+#7 C:\wamp64\www\si-perpustakaan-ci4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\wamp64\www\si-perpustakaan-ci4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\si-perpustakaan-ci4\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-29 12:57:20 --> Unknown column 'tbl_prodi.prodi' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(`tbl_peminjaman`.`id_anggota`) AS `qty`, `tbl_anggota`.`id_anggota`, `tbl_anggota`.`nim`, `tbl_anggota`.`nama`, `tbl_prodi`.`prodi`
+FROM `tbl_peminjaman`
+LEFT JOIN `tbl_anggota` ON `tbl_anggota`.`id_anggota` = `tbl_peminjaman`.`id_anggota`
+LEFT JOIN `tbl_prodi` ON `tbl_prodi`.`id_prodi` = `tbl_anggota`.`id_prodi`
+WHERE `status_pinjam` = :status_pinjam:
+GROUP BY `tbl_peminjaman`.`id_anggota`', [...], false)
+ 2 APPPATH\Models\ModelPeminjaman.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(37): App\Models\ModelPeminjaman->PengajuanMasuk()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Admin->PengajuanMasuk()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-29 12:57:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 12:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:11:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:14:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:23:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:24:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:26:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:28:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:29:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:31:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:31:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-29 13:41:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
