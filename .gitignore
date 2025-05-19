@@ -1,0 +1,31 @@
+# ========================
+# CODEIGNITER 4 .gitignore
+# ========================
+
+# Composer dependencies
+/vendor/
+
+# Node modules (if using npm)
+/node_modules/
+
+# Environment configuration
+.env
+
+# CI4 writable folder (for logs, sessions, uploads, etc)
+writable/*
+!writable/index.html
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# PHPUnit cache
+.phpunit.result.cache
+
+
